@@ -18,7 +18,7 @@ import java.util.List;
 public abstract class visionHelp {
 	
 	public void analysisPicture(String inputDir,String outputDit)throws Exception{
-		ImageAnnotatorClient vision =ImageAnnotator.Client.create();
+		ImageAnnotatorClient vision =ImageAnnotatorClient.create();
 		List<AnnotateImageRequest> requests= new ArrayList<AnnotateImageRequest>();
 		
 		File input = new File(inputDir);
@@ -55,7 +55,9 @@ public abstract class visionHelp {
 				data[1]=String.valueOf(annotation.getScore());
 				datas.add(data);
 			}
+			dataList.add(datas);
 		}
+		writeData(outputDir,imputFileName,dataList);
 	}
 	public abstract void writeData(String outDir,String[] inputFileNames,List<List<String[]>> dataList);
 	

@@ -10,4 +10,10 @@ public class Anemonefish  extends Fish{
         System.out.printf("小丑魚 %s 游泳n",name);
     }
 
+
+
+
+
+
+
 }
